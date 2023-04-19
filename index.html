@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Schedule Task</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href = "css/common.css">
+    </head>
+    <body onload="SetUserType(0), gen_card()">
+
+        <!-- Begin Main header -->
+        <header id="main-header" class="my-col-s-12 my-col-t-12 my-col-d-12">
+            <div class="button-user-tools" onclick="">
+                <h4>Olá, Renato</h4>
+                <i class="glyphicon glyphicon-glyphicon glyphicon-bell"></i>
+                <i class="glyphicon glyphicon-cog"></i>
+            </div>
+            <h1>Schedule Task</h1>
+        </header>
+        <!-- End Main header -->
+        
+        <main class="my-col-s-12 my-col-t-12 my-col-d-12">
+            <!-- Begin Sidebar -->
+            <nav id="sidebar" class="my-col-s-1 my-col-t-1 my-col-d-1">
+                <ul id="main-menu-links"></ul>
+                <div class="button-add-section" onclick="ExpandSectionModal(1)">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </div>
+            </nav>
+            <div id="modal-add-section" class="my-col-s-12 my-col-t-12 my-col-d-12 mymodal">
+                <div class="mymodal-content" style="background-color: #222222; color: #fff;">
+                    <div style="padding: 20px;">
+                        <div class="button-remove" style="float:right;">
+                            <i id="btn-ok" class="glyphicon glyphicon-ok" onclick="AddSection()"></i>
+                            <i id="btn-x" class="glyphicon glyphicon-remove" onclick="ExpandSectionModal(0)"></i>
+                        </div>
+                        <p style="padding: 10px;">Nome da Seção</p>
+                        <input id="section-name" class="text-box" style="color: #000" minlength="1" maxlength="10"/>
+                    </div>
+                </div>
+            </div>
+            <!-- End Sidebar -->
+
+            <!-- Begin Modal New Task -->
+            <div id="modal-task" class="mymodal" onload="get_note_color()">
+                <div id="center-mode">
+                <div class="my-col-s-12 my-col-t-10 my-col-d-6 mymodal-content">
+                    <header id="new-task">
+                        <div class="button-remove">
+                            <input id="color-selector" type="color"/>
+                            <i id="btn-ok" class="glyphicon glyphicon-ok"></i>
+                            <i id="btn-x" class="glyphicon glyphicon-remove" onclick="ExpandTaskModal(0)"></i>
+                        </div>
+                        <h1>Nova tarefa</h1>
+                        <p id="hex">Default</p>
+                        <script>
+                            var theInput = document.getElementById("color-selector");
+                            theInput.addEventListener("input", function(){
+                            document.getElementById("new-task").style.backgroundColor = theInput.value;
+                            document.getElementById("hex").innerHTML = theInput.value;}, 
+                            false);
+                        </script>
+                    </header>
+                    <form class="form-new-task" action="">
+                        <h2>Título</h2>
+                        <input class="text-box" type="text" minlength="5" maxlength="35"/>
+                        <fieldset>
+                            <h2>Prioridade</h2>
+                            <label>Baixa</label>
+                            <label style="float: right;">Alta</label>
+                            <input type="range" min="0" max="1">
+                        </fieldset>
+                        <h2>Prazo</h2>
+                        <input type="date"/>
+                        <h2>Descrição</h2>
+                        <input class="text-box"  type="text"/>
+                        <h2>Detalhes</h2>
+                        <textarea class="text-box" rows="4" cols="50"></textarea>
+                        <h2>Usuários vinculados</h2>
+                        <input type="button" value="Adicionar"/> 
+                    </form>
+                </div>
+                </div>
+            </div>
+            <!-- End Modal -->
+
+            <!-- Begin Notes Section -->
+            <section class="my-col-s-12 my-col-t-12 my-col-d-11">
+                <div class="button-plus" onclick="ExpandTaskModal(1)">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </div>
+                <p id="num-task"></p>
+            </section>
+            <div id="notes" class="my-col-s-12 my-col-t-12 my-col-d-11">
+                <!-- <input type="search"> -->
+                <section class="my-col-s-11 my-col-t-12 my-col-s-11">
+                    <div id="task-empty" class="my-col-d-12" style="height: 82vh; color: #ddd; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <i class="glyphicon glyphicon-list-alt" style="font-size: 200pt;"></i><br>
+                        <em style="font-size: 20pt;">Ufa, parece que não há tarefas!</em>
+                    </div>
+                    <div id = "jsCardID"></div>
+                </section>
+            </div>
+
+            <!-- End Notes Section -->
+
+        </main>
+        <footer class="my-col-d-12 my-col-s-12 my-col-t-12">
+            version 0.0.0<br>
+            &copy;2023
+        </footer>
+        <script src="jss/javascript.js"></script>
+    </body>
+</html>

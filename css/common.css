@@ -1,0 +1,261 @@
+@charset "UTF-8";
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    margin: 0px;
+    height: 100vh;
+}
+footer{
+	background-color: #222;
+	color: #fff;
+	padding: 15px 0 15px 0;
+	text-align: center;
+}
+
+/* Begin main menu */
+@media only screen and (max-width: 1365px){
+	#sidebar{
+		display: none;
+	}
+}
+@media only screen and (min-width: 1366px){
+	#sidebar{
+		background-color: #333;
+		color: #fff;
+		position: sticky;
+		top: 0;
+		height: 100vh;
+		z-index: 0;
+	}
+}
+#sidebar ul{
+	display: block;
+	list-style: none;
+	padding: 0;
+}
+#sidebar li{
+	padding: 10px;
+}
+#sidebar li:hover{
+	cursor: pointer;
+	background-color: #fff;
+	color: #222;
+}
+.button-add-section{
+	background-color: #049;
+	color: #fff;
+	text-align: center;
+	box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.9);
+}
+.button-add-section:hover{
+	cursor: pointer;
+	background-color: #06f;
+	color: #fff;
+	text-align: center;
+	box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.9);
+}
+/* End main menu */
+
+/* Begin main header */
+#main-header{
+	position: relative;
+	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+	color: #fff;
+	background-color: #222;
+	z-index: 1;
+}
+#main-header h1{
+	margin-left: 40px;
+}
+.button-user-tools{
+	float: right;
+	margin: 1%;
+	display: flex;
+	align-items: center;
+	justify-items: center;
+}
+/* End main header */
+
+/* Begin section cards */
+#notes{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+@media only screen and (max-width: 768px){
+	.card{
+		margin-left: 0;
+		margin-bottom: 2%;
+	}
+}
+@media only screen and (min-width: 769px){
+	.card{
+		margin-left: 6%;
+		margin-bottom: 2%;
+	}
+}
+.card{
+	box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	text-align: left;
+	text-indent: 20px;
+}
+.card:hover{
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.card td{
+	padding: 10px;
+}
+.card th{
+	padding: 10px;
+	font-size: 18pt;
+}
+.card li{
+	border: solid #f00 1px;
+	list-style: none;
+	display: inline;
+	padding: 10px;
+}
+
+[class*=button-] i{
+	padding: 10px;
+	color: #fff;
+	font-size: 14pt;
+	margin-left: auto;
+	margin-right: auto;
+}
+.button-plus{
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+	background-color: #283;
+	float: right;
+	margin: 1%;	
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-items: center;
+}
+.button-plus:hover{
+	background-color: #2a3;
+	cursor: pointer;
+}
+#num-task{
+	padding: 10px;
+}
+/* End section cards */
+
+/* Modal settings */
+.button-remove{
+	float: right;
+}
+#btn-ok:hover{
+	color: #ddd;
+	cursor: pointer;
+}
+#btn-x:hover{
+	color: #eee;
+	cursor: pointer;
+}
+.mymodal{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	max-height: 100vh;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+.mymodal-content{
+	box-shadow: 2px 2px 2px #222;
+	margin: 3% auto 0 auto;
+	background-color: #fff;
+}
+.mymodal-content div{
+	padding: 20px;
+}
+#modal-task, #modal-add-section{
+	display: none;
+	width: 100vw;
+	height: 100vh;
+}
+#center-mode{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#new-task{
+	color: #fff;
+	background-color: #049;
+	padding: 10px 10px 10px 50px;
+}
+.text-box{
+	width: 100%;
+}
+.form-new-task{
+	padding: 50px;
+	width: 100%;
+}
+.form-new-task h2{
+	font-weight: bold;
+}
+.form-new-task input, textarea{
+	background-color: #fefefe;
+}
+/* Begin query devices */
+[class*="my-col-"]{
+	float: left;
+	border: solid #f00 1px;
+	display: table;
+}
+@media only screen and (max-width: 768px){
+	.my-col-s-1 {width: 8.33%;}
+  	.my-col-s-2 {width: 16.66%;}
+  	.my-col-s-3 {width: 25%;}
+  	.my-col-s-4 {width: 33.33%;}
+  	.my-col-s-5 {width: 41.66%;}
+  	.my-col-s-6 {width: 50%;}
+  	.my-col-s-7 {width: 58.33%;}
+  	.my-col-s-8 {width: 66.66%;}
+  	.my-col-s-9 {width: 75%;}
+  	.my-col-s-10 {width: 83.33%;}
+  	.my-col-s-11 {width: 91.66%;}
+  	.my-col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 769px) and (max-width: 1366px){
+	.my-col-t-1 {width: 8.33%;}
+  	.my-col-t-2 {width: 16.66%;}
+  	.my-col-t-3 {width: 25%;}
+  	.my-col-t-4 {width: 33.33%;}
+  	.my-col-t-5 {width: 41.66%;}
+  	.my-col-t-6 {width: 50%;}
+  	.my-col-t-7 {width: 58.33%;}
+  	.my-col-t-8 {width: 66.66%;}
+  	.my-col-t-9 {width: 75%;}
+  	.my-col-t-10 {width: 83.33%;}
+  	.my-col-t-11 {width: 91.66%;}
+  	.my-col-t-12 {width: 100%;}
+}
+@media only screen and (min-width: 1367px){
+	.my-col-d-1 {width: 8.33%;}
+  	.my-col-d-2 {width: 16.66%;}
+  	.my-col-d-3 {width: 25%;}
+  	.my-col-d-4 {width: 33.33%;}
+  	.my-col-d-5 {width: 41.66%;}
+  	.my-col-d-6 {width: 50%;}
+  	.my-col-d-7 {width: 58.33%;}
+  	.my-col-d-8 {width: 66.66%;}
+  	.my-col-d-9 {width: 75%;}
+  	.my-col-d-10 {width: 83.33%;}
+  	.my-col-d-11 {width: 91.66%;}
+  	.my-col-d-12 {width: 100%;}
+}
+/* End query devices */
