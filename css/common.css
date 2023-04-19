@@ -1,16 +1,26 @@
 @charset "UTF-8";
 
+*{
+	box-sizing: border-box;
+}
 body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: #fff;
-    margin: 0px;
-    height: 100vh;
+    margin: 0;
+	font-size: 100%;
 }
 footer{
 	background-color: #222;
 	color: #fff;
 	padding: 15px 0 15px 0;
 	text-align: center;
+}
+p, a{
+	font-size: 2em;
+} 
+p{
+	text-indent: 50px;
+	line-height: 25px;
 }
 
 /* Begin main menu */
@@ -99,11 +109,7 @@ footer{
 .card{
 	box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
-	display: flex;
-	flex-direction: column;
-	box-sizing: border-box;
 	text-align: left;
-	text-indent: 20px;
 }
 .card:hover{
 	cursor: pointer;
@@ -211,6 +217,12 @@ footer{
 	background-color: #fefefe;
 }
 /* Begin query devices */
+.row::after{
+	content: "";
+	clear:  both;
+	display: table;
+}
+
 [class*="my-col-"]{
 	float: left;
 	border: solid #f00 1px;
@@ -230,7 +242,7 @@ footer{
   	.my-col-s-11 {width: 91.66%;}
   	.my-col-s-12 {width: 100%;}
 }
-@media only screen and (min-width: 769px) and (max-width: 1366px){
+@media only screen and (min-width: 769px){
 	.my-col-t-1 {width: 8.33%;}
   	.my-col-t-2 {width: 16.66%;}
   	.my-col-t-3 {width: 25%;}
@@ -244,7 +256,7 @@ footer{
   	.my-col-t-11 {width: 91.66%;}
   	.my-col-t-12 {width: 100%;}
 }
-@media only screen and (min-width: 1367px){
+@media only screen and (min-width: 1366px){
 	.my-col-d-1 {width: 8.33%;}
   	.my-col-d-2 {width: 16.66%;}
   	.my-col-d-3 {width: 25%;}
