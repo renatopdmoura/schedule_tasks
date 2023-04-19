@@ -5,9 +5,10 @@
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #fff;
+    background-color: #f9f9f9;
     margin: 0;
 	font-size: 100%;
+	font-size: 2em;
 }
 footer{
 	background-color: #222;
@@ -15,21 +16,18 @@ footer{
 	padding: 15px 0 15px 0;
 	text-align: center;
 }
-p, a{
-	font-size: 2em;
-} 
 p{
 	text-indent: 50px;
 	line-height: 25px;
 }
 
 /* Begin main menu */
-@media only screen and (max-width: 1365px){
+@media only screen and (max-width: 1366px){
 	#sidebar{
 		display: none;
 	}
 }
-@media only screen and (min-width: 1366px){
+@media only screen and (min-width: 1367px){
 	#sidebar{
 		background-color: #333;
 		color: #fff;
@@ -94,33 +92,32 @@ p{
 	justify-content: center;
 	align-items: center;
 }
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 1280px){
 	.card{
 		margin-left: 0;
 		margin-bottom: 2%;
 	}
 }
-@media only screen and (min-width: 769px){
-	.card{
-		margin-left: 6%;
-		margin-bottom: 2%;
-	}
-}
 .card{
-	box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
-	border-radius: 4px;
+	outline: rgb(249, 249, 249) solid 8px;
 	text-align: left;
+	background-color: #fff9eb;
+	padding: 10px;
+	z-index: 0;
 }
 .card:hover{
 	cursor: pointer;
-	background-color: rgba(0, 0, 0, 0.1);
+	background-color: rgba(126, 186, 235, 0.178);
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+	z-index: 20;
 }
 .card td{
-	padding: 10px;
+	padding: 15px;
 }
 .card th{
 	padding: 10px;
-	font-size: 18pt;
+	background-color: #333;
+	color: #fff;
 }
 .card li{
 	border: solid #f00 1px;
@@ -187,12 +184,12 @@ p{
 .mymodal-content div{
 	padding: 20px;
 }
-#modal-task, #modal-add-section{
+#modal-add-section, #modal-task{
 	display: none;
 	width: 100vw;
 	height: 100vh;
 }
-#center-mode{
+.center-mode{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -225,7 +222,7 @@ p{
 
 [class*="my-col-"]{
 	float: left;
-	border: solid #f00 1px;
+	/* border: solid #f00 1px; */
 	display: table;
 }
 @media only screen and (max-width: 768px){
@@ -242,7 +239,21 @@ p{
   	.my-col-s-11 {width: 91.66%;}
   	.my-col-s-12 {width: 100%;}
 }
-@media only screen and (min-width: 769px){
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+	.my-col-m-1 {width: 8.33%;}
+  	.my-col-m-2 {width: 16.66%;}
+  	.my-col-m-3 {width: 25%;}
+  	.my-col-m-4 {width: 33.33%;}
+  	.my-col-m-5 {width: 41.66%;}
+  	.my-col-m-6 {width: 50%;}
+  	.my-col-m-7 {width: 58.33%;}
+  	.my-col-m-8 {width: 66.66%;}
+  	.my-col-m-9 {width: 75%;}
+  	.my-col-m-10 {width: 83.33%;}
+  	.my-col-m-11 {width: 91.66%;}
+  	.my-col-m-12 {width: 100%;}
+}
+@media only screen and (min-width: 1024px) and (max-width: 1366px){
 	.my-col-t-1 {width: 8.33%;}
   	.my-col-t-2 {width: 16.66%;}
   	.my-col-t-3 {width: 25%;}

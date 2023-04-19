@@ -30,7 +30,7 @@ function ExpandTaskModal(flag){
 function make_card(title, content, links){
     let l = "";
     for(let i = 0; i < links.length; ++i){ l = l + '<li><a href="#">' + links[i] + '</a></li>'}
-    let s = `<table class="my-col-s-12 my-col-t-12  my-col-d-3 card"><th>${title}</th><tr><td><p>${content}</p></td></tr><tr><td><ul>${l}</ul></tr></tr></table>`;
+    let s = `<table class="my-col-s-12 my-col-m-12 my-col-t-4  my-col-d-3 card"><th>${title}</th><tr><td><p>${content}</p></td></tr><tr><td><ul>${l}</ul></tr></tr></table>`;
     return s;
 }
 function gen_card(){
