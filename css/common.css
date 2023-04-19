@@ -99,6 +99,7 @@ p{
 	}
 }
 .card{
+	margin-top: 12px;
 	outline: rgb(249, 249, 249) solid 8px;
 	text-align: left;
 	background-color: #fff9eb;
@@ -127,7 +128,7 @@ p{
 }
 #notes-toolbar{
 	padding-top: 4px;
-	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.1);
 	background-color: #456;
 	color: #fff;
 }
@@ -144,8 +145,8 @@ p{
 	background-color: #283;
 	float: right;
 	margin: 1%;	
-	width: 50px;
-	height: 50px;
+	width: auto;
+	height: auto;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
@@ -156,6 +157,7 @@ p{
 	cursor: pointer;
 }
 #num-task{
+	font-size: 12pt;
 	text-indent: 0;
 	padding: 10px;
 }

@@ -1,3 +1,5 @@
+//Global variables
+var tot = 100;
 
 // JS Functions
 
@@ -28,13 +30,22 @@ function ExpandTaskModal(flag){
         document.getElementById("modal-task").style = "display: none;";
 }
 function make_card(title, content, links){
+    let k = `<div style="float:right; margin-right: 12px" onclick="RemoveCard()">
+                <i class="glyphicon glyphicon-remove"></i>
+            </div>
+            <div style="float:right; margin-right: 18px" onclick="ExpandTaskModal(1)">
+                <i class="glyphicon glyphicon-pencil"></i>
+            </div>`;
     let l = "";
     for(let i = 0; i < links.length; ++i){ l = l + '<li><a href="#">' + links[i] + '</a></li>'}
-    let s = `<table class="my-col-s-12 my-col-m-12 my-col-t-4  my-col-d-3 card"><th>${title}</th><tr><td><p>${content}</p></td></tr><tr><td><ul>${l}</ul></tr></tr></table>`;
+    let s = `<table class="my-col-s-12 my-col-m-12 my-col-t-4  my-col-d-3 card"><th>${title}${k}</th><tr><td><p>${content}</p></td></tr><tr><td><ul>${l}</ul></tr></tr></table>`;
     return s;
 }
+function RemoveCard(){
+    tot -= 1;
+    gen_card();
+}
 function gen_card(){
-    let tot    = 24;
     if(tot){
         document.getElementById("task-empty").style.display = "none";
     }
