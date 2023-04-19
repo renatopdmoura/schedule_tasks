@@ -1,2 +1,2 @@
-# schedule_task
+# schedule_tasks
  System for tasks management
