@@ -125,6 +125,11 @@ p{
 	display: inline;
 	padding: 10px;
 }
+#notes-toolbar{
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+	border-radius: 5%;
+	background-color: #fff;
+}
 
 [class*=button-] i{
 	padding: 10px;
@@ -150,6 +155,7 @@ p{
 	cursor: pointer;
 }
 #num-task{
+	text-indent: 0;
 	padding: 10px;
 }
 /* End section cards */
