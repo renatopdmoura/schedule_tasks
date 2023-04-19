@@ -1,5 +1,6 @@
 //Global variables
-var tot = 100;
+var taskill = {titles: ["Title "], desc: ["Hello, this is the description "], links: ["Link-me "]};
+var tot     = taskill.titles.length + 23;
 
 // JS Functions
 
@@ -36,14 +37,14 @@ function make_card(title, content, links){
             <div style="float:right; margin-right: 18px" onclick="ExpandTaskModal(1)">
                 <i class="glyphicon glyphicon-pencil"></i>
             </div>`;
-    let l = "";
-    for(let i = 0; i < links.length; ++i){ l = l + '<li><a href="#">' + links[i] + '</a></li>'}
-    let s = `<table class="my-col-s-12 my-col-m-12 my-col-t-4  my-col-d-3 card"><th>${title}${k}</th><tr><td><p>${content}</p></td></tr><tr><td><ul>${l}</ul></tr></tr></table>`;
+    let l = `<li><a href="#">` + links + `</a></li>`;
+    // for(let i = 0; i < links.length; ++i){ l = l + '<li><a href="#">' + links[i] + '</a></li>'}
+    let s = `<table class="my-col-s-12 my-col-m-12 my-col-t-4  my-col-d-4 card"><th>${title}${k}</th><tr><td><p>${content}</p></td></tr><tr><td><ul>${l}</ul></tr></tr></table>`;
     return s;
 }
 function RemoveCard(){
     tot -= 1;
-    gen_card();
+    GenCard();
 }
 function gen_card(){
     if(tot){
@@ -61,5 +62,17 @@ function gen_card(){
         cards = cards + make_card(titles[i], txt + i, links[i]);
     }
     document.getElementById("jsCardID").innerHTML     = cards;
+    document.getElementById("num-task").innerHTML  = `Total de tarefas: ${tot}`;
+}
+
+function GenCard(){
+    if(tot){
+        document.getElementById("task-empty").style.display = "none";
+    }
+    let cards = "";
+    for(let i = 0; i < tot; i++){
+        cards += make_card(taskill.titles[i] + i, taskill.desc[i], taskill.links[i] + i);
+    }
+    document.getElementById("jsCardID").innerHTML  = cards;
     document.getElementById("num-task").innerHTML  = `Total de tarefas: ${tot}`;
 }
