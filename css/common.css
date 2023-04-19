@@ -126,9 +126,10 @@ p{
 	padding: 10px;
 }
 #notes-toolbar{
+	padding-top: 4px;
 	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-	border-radius: 5%;
-	background-color: #fff;
+	background-color: #456;
+	color: #fff;
 }
 
 [class*=button-] i{
