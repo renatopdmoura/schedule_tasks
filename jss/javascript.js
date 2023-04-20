@@ -1,5 +1,10 @@
 //Global variables
-var taskill = {titles: ["Title "], desc: ["Hello, this is the description "], links: ["Link-me "]};
+var lorem =`Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Neque itaque inventore assumenda officiis non obcaecati 
+            explicabo ipsa atque reiciendis est vero libero dolore cupiditate 
+            asperiores esse error minus, repellat expedita?`;
+var colors = [24];
+            var taskill = {color: ["#222"], titles: ["Title "], desc: [lorem], links: ["Link-me "]};
 var tot     = taskill.titles.length + 23;
 
 // JS Functions
@@ -10,37 +15,35 @@ function SetUserType(type){
         document.getElementsByClassName("button-plus")[0].style.display        = "none";
     }
 }
-function ExpandSectionModal(flag){
-    if(flag)
-        document.getElementById("modal-add-section").style = "display: block;";
-    else
-        document.getElementById("modal-add-section").style = "display: none;";
+function ExpandModal(flag, name_id){
+    if(flag){
+        document.getElementById(name_id).style.display = "block";
+    }
+    else{
+        document.getElementById(name_id).style.display = "none";
+    }
 }
 
 function AddSection(){
     if(document.getElementById("section-name").value != ""){
         document.getElementById("main-menu-links").innerHTML += "<li>" + document.getElementById("section-name").value + "</li>";
         document.getElementById("section-name").value = "";
-        ExpandSectionModal(0);
+        ExpandModal(0, 'modal-add-section');
     }
 }
-function ExpandTaskModal(flag){
-    if(flag)
-        document.getElementById("modal-task").style = "display: block;";
-    else
-        document.getElementById("modal-task").style = "display: none;";
-}
-function make_card(title, content, links){
-    let k = `<div style="float:right; margin-right: 12px" onclick="RemoveCard()">
-                <i class="glyphicon glyphicon-remove"></i>
-            </div>
-            <div style="float:right; margin-right: 18px" onclick="ExpandTaskModal(1)">
-                <i class="glyphicon glyphicon-pencil"></i>
-            </div>`;
-    let l = `<li><a href="#">` + links + `</a></li>`;
-    // for(let i = 0; i < links.length; ++i){ l = l + '<li><a href="#">' + links[i] + '</a></li>'}
-    let s = `<table class="my-col-s-12 my-col-m-12 my-col-t-4  my-col-d-4 card"><th>${title}${k}</th><tr><td><p>${content}</p></td></tr><tr><td><ul>${l}</ul></tr></tr></table>`;
-    return s;
+function make_card(color, title, content, links){
+    let icons = `<div style="float:right; margin-right: 12px" onclick="RemoveCard()">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </div>
+                <div style="float:right; margin-right: 18px" onclick="ExpandTaskModal(1)">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </div>`;
+    let l    = `<li><a href="#">` + links + `</a></li>`;
+    let html = `<div class="my-col-s-12 my-col-m-12 my-col-t-12 my-col-d-12 card" style="border-left:${color} solid 6px;">
+                    <header>${title}${icons}</header>
+                    <p style="font-size: 1em">${content}</p>
+                </div>`
+    return html;
 }
 function RemoveCard(){
     tot -= 1;
@@ -57,11 +60,11 @@ function gen_card(){
         titles.push('Title ' + i);
     }
     let cards = "";
-    let txt = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio itaque totam officiis omnis ullam inventore expedita modi dolore sapiente magni culpa, at, veritatis, blanditiis odit consequuntur? Commodi et dolor aut.";
+    let txt = "";
     for(let i = 0; i < tot; i++){
         cards = cards + make_card(titles[i], txt + i, links[i]);
     }
-    document.getElementById("jsCardID").innerHTML     = cards;
+    document.getElementById("jsCardID").innerHTML  = cards;
     document.getElementById("num-task").innerHTML  = `Total de tarefas: ${tot}`;
 }
 
@@ -71,7 +74,7 @@ function GenCard(){
     }
     let cards = "";
     for(let i = 0; i < tot; i++){
-        cards += make_card(taskill.titles[i] + i, taskill.desc[i], taskill.links[i] + i);
+        cards += make_card(colors[0], taskill.titles[i] + i, taskill.desc[i], taskill.links[i] + i);
     }
     document.getElementById("jsCardID").innerHTML  = cards;
     document.getElementById("num-task").innerHTML  = `Total de tarefas: ${tot}`;

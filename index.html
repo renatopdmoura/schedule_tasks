@@ -10,7 +10,7 @@
         <meta name="author" content="Renato Moura">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body onload="SetUserType(0), GenCard()">
+    <body onload="SetUserType()">
 
         <!-- Begin Main header -->
         <header id="main-header" class="my-col-s-12 my-col-m-12 my-col-t-12 my-col-d-12">
@@ -27,7 +27,7 @@
             <!-- Begin Sidebar -->
             <nav id="sidebar" class="my-col-s-1 my-col-t-1 my-col-d-1">
                 <ul id="main-menu-links"></ul>
-                <div class="button-add-section" onclick="ExpandSectionModal(1)">
+                <div class="button-add-section" onclick="ExpandModal(1, 'modal-add-section')">
                     <i class="glyphicon glyphicon-plus"></i>
                 </div>
             </nav>
@@ -37,7 +37,7 @@
                         <div style="padding: 20px;">
                             <div class="button-remove" style="float:right;">
                                 <i id="btn-ok" class="glyphicon glyphicon-ok" onclick="AddSection()"></i>
-                                <i id="btn-x" class="glyphicon glyphicon-remove" onclick="ExpandSectionModal(0)"></i>
+                                <i id="btn-x" class="glyphicon glyphicon-remove" onclick="ExpandModal(0, 'modal-add-section')"></i>
                             </div>
                             <p style="padding: 10px;">Nome da Seção</p>
                             <input id="section-name" class="text-box" style="color: #000" minlength="1" maxlength="10"/>
@@ -54,8 +54,8 @@
                         <header id="new-task">
                             <div class="button-remove">
                                 <input id="color-selector" type="color"/>
-                                <i id="btn-ok" class="glyphicon glyphicon-ok"></i>
-                                <i id="btn-x" class="glyphicon glyphicon-remove" onclick="ExpandTaskModal(0)"></i>
+                                <i id="btn-ok" class="glyphicon glyphicon-ok" onclick="GenCard()"></i>
+                                <i id="btn-x" class="glyphicon glyphicon-remove" onclick="ExpandModal(0, 'modal-task')"></i>
                             </div>
                             <h1>Nova tarefa</h1>
                             <p id="hex">Default</p>
@@ -63,7 +63,8 @@
                                 var theInput = document.getElementById("color-selector");
                                 theInput.addEventListener("input", function(){
                                 document.getElementById("new-task").style.backgroundColor = theInput.value;
-                                document.getElementById("hex").innerHTML = theInput.value;}, 
+                                document.getElementById("hex").innerHTML = theInput.value;
+                                colors[0] = theInput.value;}, 
                                 false);
                             </script>
                         </header>
@@ -92,7 +93,7 @@
 
             <!-- Begin Notes Section -->
             <section id="notes-toolbar" class="my-col-s-12 my-col-m-12 my-col-t-12 my-col-d-11">
-                <div class="button-plus" onclick="ExpandTaskModal(1)">
+                <div class="button-plus" onclick="ExpandModal(1, 'modal-task')">
                     <i class="glyphicon glyphicon-plus"></i>
                 </div>
                 <p id="num-task"></p>
@@ -106,11 +107,9 @@
                     <div id = "jsCardID" style="padding: 10px;"></div>
                 </section>
             </div>
-
             <!-- End Notes Section -->
-
         </main>
-        <footer class="my-col-d-12 my-col-s-12 my-col-t-12">
+        <footer class="my-col-s-12 my-col-m-12 my-col-t-12 my-col-d-12">
             <p>&copy;2023, version 0.0.0</p>
         </footer>
         <script src="jss/javascript.js"></script>
