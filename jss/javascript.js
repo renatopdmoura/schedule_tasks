@@ -4,7 +4,7 @@ var lorem =`Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             explicabo ipsa atque reiciendis est vero libero dolore cupiditate 
             asperiores esse error minus, repellat expedita?`;
 var colors = [24];
-            var taskill = {color: ["#222"], titles: ["Title "], desc: [lorem], links: ["Link-me "]};
+var taskill = {color: ["#222"], titles: ["Title "], desc: [lorem], links: ["Link-me "]};
 var tot     = taskill.titles.length + 23;
 
 // JS Functions
@@ -37,6 +37,9 @@ function make_card(color, title, content, links){
                 </div>
                 <div style="float:right; margin-right: 18px" onclick="ExpandTaskModal(1)">
                     <i class="glyphicon glyphicon-pencil"></i>
+                </div>
+                <div style="float:right; margin-right: 18px" onclick="ExpandTaskModal(1)">
+                    <i class="glyphicon glyphicon-ok"></i>
                 </div>`;
     let l    = `<li><a href="#">` + links + `</a></li>`;
     let html = `<div class="my-col-s-12 my-col-m-12 my-col-t-12 my-col-d-12 card" style="border-left:${color} solid 6px;">

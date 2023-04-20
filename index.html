@@ -14,12 +14,12 @@
 
         <!-- Begin Main header -->
         <header id="main-header" class="my-col-s-12 my-col-m-12 my-col-t-12 my-col-d-12">
+            <h1 class="my-col-s-12">Schedule Task</h1>
             <div class="button-user-tools" onclick="">
-                <h4>Olá, Renato</h4>
+                <!-- <h4>Olá, Renato</h4> -->
                 <i class="glyphicon glyphicon-glyphicon glyphicon-bell"></i>
                 <i class="glyphicon glyphicon-cog"></i>
             </div>
-            <h1>Schedule Task</h1>
         </header>
         <!-- End Main header -->
         
@@ -40,7 +40,7 @@
                                 <i id="btn-x" class="glyphicon glyphicon-remove" onclick="ExpandModal(0, 'modal-add-section')"></i>
                             </div>
                             <p style="padding: 10px;">Nome da Seção</p>
-                            <input id="section-name" class="text-box" style="color: #000" minlength="1" maxlength="10"/>
+                            <input id="section-name" class="text-box" style="color: #000" minlength="1" maxlength="30"/>
                         </div>
                     </div>
                 </div>
@@ -100,8 +100,8 @@
             </section>
             <div id="notes" class="my-col-s-12 my-col-m-12 my-col-t-12 my-col-d-11">
                 <section class="my-col-s-11 my-col-m-12 my-col-t-12 my-col-d-12">
-                    <div id="task-empty" class="my-col-d-12" style="height: 82vh; color: #ddd; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                        <i class="glyphicon glyphicon-list-alt" style="font-size: 200pt;"></i><br>
+                    <div id="task-empty" class="my-col-s-12 my-col-m-12 my-col-t-12 my-col-d-12" style="height: 82vh; color: #ddd; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <i class="glyphicon glyphicon glyphicon-check" style="font-size: 200pt;"></i><br>
                         <em style="font-size: 20pt;">Ufa, parece que não há tarefas!</em>
                     </div>
                     <div id = "jsCardID" style="padding: 10px;"></div>
