@@ -54,37 +54,34 @@
                         <header id="new-task">
                             <div class="button-remove">
                                 <input id="color-selector" type="color"/>
-                                <i id="btn-ok" class="glyphicon glyphicon-ok" onclick="GenCard()"></i>
+                                <i id="btn-ok" class="glyphicon glyphicon-ok" onclick="AddTaskill()"></i>
                                 <i id="btn-x" class="glyphicon glyphicon-remove" onclick="ExpandModal(0, 'modal-task')"></i>
                             </div>
                             <h1>Nova tarefa</h1>
                             <p id="hex">Default</p>
                             <script>
-                                var theInput = document.getElementById("color-selector");
-                                theInput.addEventListener("input", function(){
-                                document.getElementById("new-task").style.backgroundColor = theInput.value;
-                                document.getElementById("hex").innerHTML = theInput.value;
-                                colors[0] = theInput.value;}, 
-                                false);
+                                let theInput = document.getElementById("color-selector");
+                                theInput.addEventListener("input",  function(){  document.getElementById("new-task").style.backgroundColor = theInput.value;
+                                                                    document.getElementById("hex").innerHTML = theInput.value;}, false);
                             </script>
                         </header>
                         <form class="form-new-task" action="">
                             <h2>Título</h2>
-                            <input class="text-box" type="text" minlength="5" maxlength="35"/>
+                            <input id="btn_title" class="text-box" type="text" minlength="5" maxlength="35"/>
                             <fieldset>
                                 <h2>Prioridade</h2>
                                 <label>Baixa</label>
                                 <label style="float: right;">Alta</label>
-                                <input type="range" min="0" max="1">
+                                <input id="btn_priority" type="range" min="0" max="1">
                             </fieldset>
                             <h2>Prazo</h2>
-                            <input type="date"/>
+                            <input id="btn_term" type="date"/>
                             <h2>Descrição</h2>
-                            <input class="text-box"  type="text"/>
+                            <input id="btn_desc" class="text-box"  type="text"/>
                             <h2>Detalhes</h2>
-                            <textarea class="text-box" rows="4" cols="50"></textarea>
+                            <textarea id="txt_detail" class="text-box" rows="4" cols="50"></textarea>
                             <h2>Usuários vinculados</h2>
-                            <input type="button" value="Adicionar"/> 
+                            <!-- <input type="button" value="Adicionar"/>  -->
                         </form>
                     </div>
                 </div>
