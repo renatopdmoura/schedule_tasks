@@ -7,8 +7,8 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f9f9f9;
     margin: 0;
-	font-size: 100%;
 	font-size: 2em;
+
 }
 footer{
 	font-size: 8pt;
@@ -22,28 +22,25 @@ p{
 }
 
 /* Begin main menu */
-@media only screen and (max-width: 1366px){
-	#sidebar{
-		display: none;
-	}
-}
-@media only screen and (min-width: 1367px){
-	#sidebar{
-		background-color: #333;
-		color: #fff;
-		position: sticky;
-		top: 0;
-		z-index: 0;
-		height: 100vh;
-	}
+#sidebar{
+	display: flex;
+	flex-direction: row;
+	background-color: #333;
+	color: #fff;
+	z-index: 0;
 }
 #sidebar ul{
-	display: block;
 	list-style: none;
 	padding: 0;
+	margin: 0;
+	display: inline-flex;
+	justify-content: center;
+	font-size: 12pt;
 }
 #sidebar li{
+	display: inline-block;
 	padding: 10px;
+	z-index: 0;
 }
 #sidebar li:hover{
 	cursor: pointer;
@@ -53,14 +50,12 @@ p{
 .button-add-section{
 	background-color: #049;
 	color: #fff;
-	text-align: center;
-	box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.9);
+	box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.9);	
 }
 .button-add-section:hover{
 	cursor: pointer;
 	background-color: #06f;
 	color: #fff;
-	text-align: center;
 	box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.9);
 }
 /* End main menu */
@@ -72,9 +67,7 @@ p{
 	background-color: #222;
 	z-index: 1;
 }
-#main-header h1{
-	/* margin-left: 40px; */
-}
+
 .button-user-tools{
 	float: right;
 	margin: 1%;
@@ -231,7 +224,7 @@ p{
 
 [class*="my-col-"]{
 	float: left;
-	border: solid #f00 1px;
+	/* border: solid #f00 1px; */
 	display: table;
 }
 @media only screen and (max-width: 768px){
