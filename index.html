@@ -10,7 +10,7 @@
         <meta name="author" content="Renato Moura">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body onload="SetUserType()">
+    <body onload="SetUserType(0)">
 
         <!-- Begin Main header -->
         <header id="main-header" class="my-col-s-12 my-col-m-12 my-col-t-12 my-col-d-12">
@@ -97,9 +97,11 @@
             </section>
             <div id="notes" class="my-col-s-12 my-col-m-12 my-col-t-12 my-col-d-12">
                 <section class="my-col-s-11 my-col-m-12 my-col-t-12 my-col-d-12">
-                    <div id="task-empty" class="my-col-s-12 my-col-m-12 my-col-t-12 my-col-d-12" style="height: 82vh; color: #ddd; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                        <i class="glyphicon glyphicon glyphicon-check" style="font-size: 200pt;"></i><br>
-                        <em style="font-size: 20pt;">Ufa, parece que não há tarefas!</em>
+                    <div id="task-empty" class="my-col-s-12 my-col-m-12 my-col-t-12 my-col-d-12">
+                        <em style="font-size: 20pt;">
+                            Parece que não há tarefas!
+                            <i class="glyphicon glyphicon glyphicon-check"></i>
+                        </em>
                     </div>
                     <div id = "jsCardID" style="padding: 10px;"></div>
                 </section>
