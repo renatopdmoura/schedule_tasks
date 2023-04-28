@@ -48,6 +48,7 @@ p{
 	color: #222;
 }
 .button-add-section{
+	border-radius: 0px 12px 12px 0px;
 	background-color: #049;
 	color: #fff;
 	box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.9);	
@@ -205,7 +206,8 @@ p{
 }
 #new-task{
 	color: #fff;
-	background-color: #049;
+	background-color:#049;
+	border-top: #000 solid 20px;
 	padding: 10px 10px 10px 50px;
 }
 .text-box{
